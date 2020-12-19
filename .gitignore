@@ -19,3 +19,4 @@ gen/
 .externalNativeBuild
 app/src/main/assets/bluetooth-server.txt
 .vagrant
+treehouses-remote.jks
