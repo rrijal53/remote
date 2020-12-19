@@ -22,10 +22,6 @@ jobs:
       - name: Generate Debug APK
         run: ./gradlew build
 
-      - name: Get the signingkey
-        id: signing_key
-        run: echo ::set-output name=SIGNING_KEY::
-
       - uses: Tlaster/android-sign@v1
         name: Sign app APK
         with:
