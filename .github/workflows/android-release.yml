@@ -40,14 +40,4 @@ jobs:
           name: apk
           path: app/build/outputs/apk/release
 
-      - name: Create Release and Upload debug APK
-        uses: underwindfall/create-release-with-debugapk@v1.2.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{GITHUB_RUN_ID}}
-          release_name: Release v${{GITHUB_RUN_ID}}
-          asset_path: app/build/outputs/apk/release/*
-          asset_name: *
-          draft: false
-          prerelease: false
+
