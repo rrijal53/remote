@@ -19,7 +19,7 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Generate Debug APK
+      - name: Generate APK
         run: ./gradlew build
 
       - uses: Tlaster/android-sign@v1
