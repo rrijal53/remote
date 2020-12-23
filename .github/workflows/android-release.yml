@@ -23,7 +23,7 @@ jobs:
         run: ./gradlew build
 
       - name: List APK
-        run: ls app/build/outputs
+        run: ls app/build/outputs/apk
 
       - name: Android Sign
         uses: Tlaster/android-sign@v1.2.2
