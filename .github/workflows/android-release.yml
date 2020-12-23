@@ -47,7 +47,7 @@ jobs:
         with:
           tag_name: v${{GITHUB_RUN_ID}}
           release_name: Release v${{GITHUB_RUN_ID}}
-          asset_path: app/build/outputs/apk/release/
+          asset_path: app/build/outputs/apk/release/*
           asset_name: *
           draft: false
           prerelease: false
