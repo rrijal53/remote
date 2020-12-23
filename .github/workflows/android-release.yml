@@ -22,8 +22,8 @@ jobs:
       - name: Generate APK
         run: ./gradlew build
 
-      - uses: Tlaster/android-sign@v1
-        name: Sign app APK
+      - name: Android Sign
+        uses: Tlaster/android-sign@v1.2.2
         with:
           releaseDirectory: app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
@@ -38,6 +38,6 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: apk
-          path: app/build/outputs/apk/release
+          path: app/build/release/signed
 
 
