@@ -8,13 +8,6 @@ jobs:
     name: Release APK
     runs-on: ubuntu-latest
     steps:
-
-      - name: Get run number with offset
-        env:
-          NUM: ${{ github.run_number }}
-        run: |
-          echo 'GITHUB_RUN_NUMBER_WITH_OFFSET=$(($NUM+6050))' >> $Env:GITHUB_ENV
-
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -47,6 +40,6 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/release/signed/*
-          tag: ${{env.GITHUB_RUN_NUMBER_WITH_OFFSET}}
+          tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
