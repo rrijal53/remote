@@ -40,6 +40,6 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/release/signed/*
-          tag: ${{ github.ref }}
+          tag: ${{ github.action }}
           overwrite: true
           file_glob: true
