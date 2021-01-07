@@ -36,11 +36,6 @@ jobs:
         env:
           BUILD_TOOLS_VERSION: "30.0.2"
 
-      - name: run number with offset
-        env:
-          NUM: ${{ github.run_number }}
-        run: |
-          echo ::set-env name=GITHUB_RUN_NUMBER_WITH_OFFSET::$(($NUM+6050))
       - name: Generate build number
         uses: einaregilsson/build-number@v3
         with:
