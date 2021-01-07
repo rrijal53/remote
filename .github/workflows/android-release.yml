@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run number with offset
+        id: build_id
         env:
           NUM: ${{ github.run_number }}
         run: echo "::set-output name=id::$(($NUM+6050))"
