@@ -8,6 +8,11 @@ jobs:
     name: Release APK
     runs-on: ubuntu-latest
     steps:
+      - name: run number with offset
+        env:
+          NUM: ${{ github.run_number }}
+        run: echo "::set-output name=id::$(($NUM+6050))"
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -47,6 +52,6 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/release/signed/*
-          tag: ${{ steps.buildnumber.outputs.build_number }}
+          tag: v${{ steps.build_id.outputs.id }}
           overwrite: true
           file_glob: true
